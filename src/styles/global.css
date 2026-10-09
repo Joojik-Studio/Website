@@ -33,6 +33,7 @@
     --text-secondary: #5b616b;
     --border: #e4e7ec;
     --studio: #ffc83e;
+    --studio-orange: #f36f24;
     --accent: #4b4fd8;
     --accent-surface: #eeedff;
     --shell: 1160px;
@@ -263,7 +264,7 @@
     position: absolute;
     inline-size: 83%;
     aspect-ratio: 1;
-    background: var(--studio);
+    background: var(--studio-orange);
     border-radius: 50%;
   }
   .chick-disc::after {
