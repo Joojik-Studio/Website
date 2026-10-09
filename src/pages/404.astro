@@ -1,0 +1,35 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { assetUrl, copy, localeUrl } from '@/i18n';
+const t = copy.fa;
+---
+
+<BaseLayout
+  locale="fa"
+  path=""
+  title={`404 | ${t.brand}`}
+  description={t.notFoundDescription}
+  notFound
+>
+  <section class="not-found shell">
+    <img
+      src={assetUrl('images/joojik-mark.svg')}
+      width="110"
+      height="125"
+      alt=""
+    />
+    <p class="error-code" dir="ltr">
+      404
+    </p>
+    <h1>{t.notFoundTitle}</h1>
+    <p>{t.notFoundDescription}</p>
+    <a class="button button-studio" href={localeUrl('fa')}>
+      {t.brand}
+    </a>
+    <div class="not-found-english" lang="en" dir="ltr">
+      <h2>{copy.en.notFoundTitle}</h2>
+      <p>{copy.en.notFoundDescription}</p>
+      <a href={localeUrl('en')}>Back to Joojik Studio</a>
+    </div>
+  </section>
+</BaseLayout>

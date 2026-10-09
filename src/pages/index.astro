@@ -1,0 +1,30 @@
+---
+import '@fontsource/almarai/400.css';
+import '@/styles/global.css';
+import { assetUrl, localeUrl } from '@/i18n';
+const destination = localeUrl('fa');
+---
+
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="refresh" content={`0;url=${destination}`} />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href={new URL(destination, Astro.site)} />
+    <link rel="icon" href={assetUrl('favicon.svg')} type="image/svg+xml" />
+    <title>استودیو جوجیک</title>
+  </head>
+  <body>
+    <main class="not-found shell">
+      <h1>استودیو جوجیک</h1>
+      <p>
+        <a href={destination}>ورود به وب‌سایت فارسی</a>
+      </p>
+      <p lang="en" dir="ltr">
+        <a href={localeUrl('en')}>Visit the website in English</a>
+      </p>
+    </main>
+  </body>
+</html>

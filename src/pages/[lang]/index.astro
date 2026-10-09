@@ -1,0 +1,111 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BlockArt from '@/components/BlockArt.astro';
+import LocalizedText from '@/components/LocalizedText.astro';
+import { assetUrl, copy, localeUrl, locales, type Locale } from '@/i18n';
+export function getStaticPaths() {
+  return locales.map((lang) => ({ params: { lang } }));
+}
+const locale = Astro.params.lang as Locale;
+const t = copy[locale];
+---
+
+<BaseLayout
+  locale={locale}
+  path=""
+  title={t.studioTitle}
+  description={t.studioDescription}
+>
+  <section class="studio-hero shell" aria-labelledby="studio-title">
+    <div class="hero-copy">
+      <h1 id="studio-title">
+        <span>{t.heroLines[0]}</span>
+        <span>{t.heroLines[1]}</span>
+      </h1>
+      <p class="lead">{t.studioDescription}</p>
+      <a class="button button-studio" href="#games">
+        {t.explore}
+        <span aria-hidden="true" class="down-icon">
+          ↓
+        </span>
+      </a>
+    </div>
+    <div class="chick-scene" aria-hidden="true">
+      <svg class="scene-spark spark-one" viewBox="0 0 40 40" fill="none">
+        <path
+          d="M20 2v36M2 20h36M7 7l26 26M7 33 33 7"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+        />
+      </svg>
+      <div class="chick-orbit"></div>
+      <div class="chick-disc"></div>
+      <img
+        class="hero-chick"
+        src={assetUrl('images/joojik-mark.svg')}
+        width="340"
+        height="385"
+        alt=""
+        fetchpriority="high"
+      />
+      <svg class="scene-spark spark-two" viewBox="0 0 40 40" fill="none">
+        <path
+          d="M20 5v30M5 20h30"
+          stroke="currentColor"
+          stroke-width="4"
+          stroke-linecap="round"
+        />
+      </svg>
+      <span class="scene-dot"></span>
+    </div>
+  </section>
+
+  <section class="games-section shell" id="games" aria-labelledby="games-title">
+    <div class="section-heading">
+      <h2 id="games-title">{t.games}</h2>
+      <p>{t.gamesIntro}</p>
+    </div>
+    <article class="featured-game">
+      <div class="featured-copy">
+        <p class="context-label">
+          <span class="status-dot" aria-hidden="true"></span>
+          {t.featured}
+        </p>
+        <h3 lang="en" dir="ltr" translate="no">
+          Block Tower
+        </h3>
+        <p>
+          <LocalizedText text={t.gameDescription} />
+        </p>
+        <a
+          class="button button-game"
+          href={localeUrl(locale, 'games/block-tower')}
+        >
+          <span>
+            <LocalizedText text={t.gameLink} />
+          </span>
+        </a>
+      </div>
+      <div class="featured-art">
+        <BlockArt />
+      </div>
+    </article>
+  </section>
+
+  <section class="about-section shell" id="about" aria-labelledby="about-title">
+    <div class="about-mark" aria-hidden="true">
+      <img
+        src={assetUrl('images/joojik-mark.svg')}
+        width="58"
+        height="66"
+        alt=""
+        loading="lazy"
+      />
+    </div>
+    <div>
+      <h2 id="about-title">{t.aboutTitle}</h2>
+      <p>{t.aboutDescription}</p>
+    </div>
+  </section>
+</BaseLayout>

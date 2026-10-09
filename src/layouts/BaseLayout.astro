@@ -1,0 +1,116 @@
+---
+import '@fontsource/almarai/400.css';
+import '@fontsource/almarai/700.css';
+import '@fontsource/almarai/800.css';
+import arabicRegular from '@fontsource/almarai/files/almarai-arabic-400-normal.woff2?url';
+import latinRegular from '@fontsource/almarai/files/almarai-latin-400-normal.woff2?url';
+import '@/styles/global.css';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import { assetUrl, copy, localeUrl, locales, type Locale } from '@/i18n';
+import { blockTower } from '@/data/games';
+import { siteConfig } from '../../site.config.mjs';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  path: string;
+  game?: boolean;
+  notFound?: boolean;
+}
+const {
+  locale,
+  title,
+  description,
+  path,
+  game = false,
+  notFound = false,
+} = Astro.props;
+const absolute = (pathname: string) => new URL(pathname, Astro.site).href;
+const canonical = absolute(localeUrl(locale, path));
+const theme = game
+  ? `--accent: ${blockTower.theme.accent}; --accent-surface: ${blockTower.theme.surface};`
+  : undefined;
+---
+
+<!doctype html>
+<html lang={locale} dir={locale === 'fa' ? 'rtl' : 'ltr'}>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#FAFBFD" />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href={locale === 'fa' ? arabicRegular : latinRegular}
+      crossorigin="anonymous"
+    />
+    <meta
+      name="robots"
+      content={
+        siteConfig.indexable && !notFound ? 'index, follow' : 'noindex, follow'
+      }
+    />
+    {!notFound && (
+      <>
+        <link rel="canonical" href={canonical} />
+        {locales.map((lang) => (
+          <link
+            rel="alternate"
+            hreflang={lang}
+            href={absolute(localeUrl(lang, path))}
+          />
+        ))}
+        <link
+          rel="alternate"
+          hreflang="x-default"
+          href={absolute(localeUrl('fa', path))}
+        />
+      </>
+    )}
+    <meta property="og:site_name" content="Joojik Studio" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    {!notFound && <meta property="og:url" content={canonical} />}
+    <meta property="og:locale" content={locale === 'fa' ? 'fa_IR' : 'en_US'} />
+    <meta
+      property="og:locale:alternate"
+      content={locale === 'fa' ? 'en_US' : 'fa_IR'}
+    />
+    <meta
+      property="og:image"
+      content={absolute(assetUrl('images/social-preview.png'))}
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Joojik Studio" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta
+      name="twitter:image"
+      content={absolute(assetUrl('images/social-preview.png'))}
+    />
+    <link rel="icon" href={assetUrl('favicon.svg')} type="image/svg+xml" />
+    <link rel="sitemap" href={assetUrl('sitemap-index.xml')} />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body class:list={[{ 'game-theme': game }]} style={theme}>
+    <a class="skip-link" href="#main">
+      {copy[locale].skip}
+    </a>
+    <Header locale={locale} path={path} game={game} notFound={notFound} />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer locale={locale} game={game} />
+  </body>
+</html>

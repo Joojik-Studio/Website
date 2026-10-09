@@ -1,0 +1,17 @@
+---
+interface Props {
+  text: string;
+}
+const { text } = Astro.props;
+const parts = text.split(/(Block Tower|Joojik Studio)/g);
+---
+
+{parts.map((part) =>
+  /^(Block Tower|Joojik Studio)$/.test(part) ? (
+    <bdi lang="en" translate="no">
+      {part}
+    </bdi>
+  ) : (
+    part
+  ),
+)}

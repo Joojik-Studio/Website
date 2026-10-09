@@ -1,0 +1,78 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import LocalizedText from '@/components/LocalizedText.astro';
+import { copy, localeUrl, locales, type LegalKind, type Locale } from '@/i18n';
+export function getStaticPaths() {
+  return locales.flatMap((lang) =>
+    ['privacy-policy', 'terms-of-service'].map((document) => ({
+      params: { lang, document },
+    })),
+  );
+}
+const locale = Astro.params.lang as Locale;
+const document = Astro.params.document as LegalKind;
+const t = copy[locale];
+const content = t.legal[document];
+---
+
+<BaseLayout
+  locale={locale}
+  path={`games/block-tower/${document}`}
+  title={`${content.title} | Block Tower | ${t.brand}`}
+  description={content.description}
+  game
+>
+  <article class="legal-document shell">
+    <a class="breadcrumb" href={localeUrl(locale, 'games/block-tower')}>
+      <span class="back-icon" aria-hidden="true">
+        ↶
+      </span>
+      <span>
+        <LocalizedText text={t.backToGame} />
+      </span>
+    </a>
+    <header class="document-heading">
+      <p class="document-game" lang="en" dir="ltr" translate="no">
+        Block Tower
+      </p>
+      <h1>{content.title}</h1>
+    </header>
+    <aside class="draft-notice" aria-labelledby="draft-title">
+      <span class="notice-symbol" aria-hidden="true">
+        i
+      </span>
+      <div>
+        <h2 id="draft-title">{t.draftTitle}</h2>
+        <p>
+          <LocalizedText text={t.draftDescription} />
+        </p>
+      </div>
+    </aside>
+    <div class="document-body">
+      <p class="document-intro">
+        <LocalizedText text={content.intro} />
+      </p>
+      {content.sections.map((section) => (
+        <section>
+          <h2>{section.heading}</h2>
+          <p>{section.body}</p>
+        </section>
+      ))}
+    </div>
+    <nav class="document-related" aria-label={t.legalTitle}>
+      <a
+        href={localeUrl(
+          locale,
+          `games/block-tower/${document === 'privacy-policy' ? 'terms-of-service' : 'privacy-policy'}`,
+        )}
+      >
+        {document === 'privacy-policy' ? t.terms : t.privacy}
+      </a>
+      <a href={localeUrl(locale, 'games/block-tower')}>
+        <span>
+          <LocalizedText text={t.backToGame} />
+        </span>
+      </a>
+    </nav>
+  </article>
+</BaseLayout>

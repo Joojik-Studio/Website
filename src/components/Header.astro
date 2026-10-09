@@ -1,0 +1,48 @@
+---
+import { assetUrl, copy, localeUrl, locales, type Locale } from '@/i18n';
+interface Props {
+  locale: Locale;
+  path: string;
+  game?: boolean;
+  notFound?: boolean;
+}
+const { locale, path, game = false, notFound = false } = Astro.props;
+const t = copy[locale];
+---
+
+<header class="site-header shell">
+  <a class="brand" href={localeUrl(locale)}>
+    <img
+      src={assetUrl('images/joojik-mark.svg')}
+      width="43"
+      height="48"
+      alt=""
+    />
+    <span lang="en" dir="ltr" translate="no">
+      joojik<span class="brand-studio"> studio</span>
+    </span>
+  </a>
+  <nav class="main-nav" aria-label={t.navLabel}>
+    {game ? (
+      <a href={localeUrl(locale)}>{t.home}</a>
+    ) : (
+      <a href={`${localeUrl(locale)}#games`}>{t.games}</a>
+    )}
+    <a class="about-nav" href={`${localeUrl(locale)}#about`}>
+      {t.about}
+    </a>
+  </nav>
+  <nav class="locale-nav" aria-label={t.languageLabel}>
+    {locales.map((lang) => (
+      <a
+        href={localeUrl(lang, notFound ? '' : path)}
+        lang={lang}
+        hreflang={lang}
+        dir={lang === 'fa' ? 'rtl' : 'ltr'}
+        aria-current={!notFound && locale === lang ? 'page' : undefined}
+      >
+        {lang === 'fa' ? 'فارسی' : 'English'}
+      </a>
+    ))}
+  </nav>
+</header>

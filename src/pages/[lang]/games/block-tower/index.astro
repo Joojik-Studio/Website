@@ -1,0 +1,133 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BlockArt from '@/components/BlockArt.astro';
+import LocalizedText from '@/components/LocalizedText.astro';
+import { copy, localeUrl, locales, type Locale } from '@/i18n';
+import { blockTower } from '@/data/games';
+export function getStaticPaths() {
+  return locales.map((lang) => ({ params: { lang } }));
+}
+const locale = Astro.params.lang as Locale;
+const t = copy[locale];
+---
+
+<BaseLayout
+  locale={locale}
+  path="games/block-tower"
+  title={`Block Tower | ${t.brand}`}
+  description={t.gamePageDescription}
+  game
+>
+  <section class="game-hero shell" aria-labelledby="game-title">
+    <div class="game-hero-copy">
+      <a class="breadcrumb" href={localeUrl(locale)}>
+        <span class="back-icon" aria-hidden="true">
+          ↶
+        </span>
+        {t.brand}
+      </a>
+      <h1 id="game-title" lang="en" dir="ltr" translate="no">
+        Block
+        <br />
+        Tower<span class="title-period">.</span>
+      </h1>
+      <p class="lead">{t.gameIntro}</p>
+      <a class="button button-game" href="#download">
+        {t.comingSoon}
+        <span class="down-icon" aria-hidden="true">
+          ↓
+        </span>
+      </a>
+    </div>
+    <figure class="game-figure">
+      <div class="game-art-stage">
+        <BlockArt />
+      </div>
+      <figcaption>{t.illustration}</figcaption>
+    </figure>
+  </section>
+
+  <section class="game-description shell" aria-labelledby="game-about-title">
+    <h2 id="game-about-title">
+      <LocalizedText text={t.gameAboutTitle} />
+    </h2>
+    <p>
+      <LocalizedText text={t.gameAboutDescription} />
+    </p>
+  </section>
+
+  <section
+    class="download-section shell"
+    id="download"
+    aria-labelledby="download-title"
+  >
+    <div class="download-panel">
+      <div>
+        <h2 id="download-title">{t.downloadTitle}</h2>
+        <p>{t.comingSoonDescription}</p>
+      </div>
+      <div class="download-links">
+        {blockTower.stores.length ? (
+          blockTower.stores.map((store) => (
+            <a class="button button-game" href={store.url}>
+              {store.label[locale]}
+            </a>
+          ))
+        ) : (
+          <p class="download-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            {t.comingSoon}
+          </p>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="legal-links-section shell"
+    aria-labelledby="legal-links-title"
+  >
+    <div>
+      <h2 id="legal-links-title">{t.legalTitle}</h2>
+      <p>
+        <LocalizedText text={t.legalDescription} />
+      </p>
+    </div>
+    <nav class="document-links" aria-label={t.legalTitle}>
+      <a href={localeUrl(locale, 'games/block-tower/privacy-policy')}>
+        {t.privacy}
+        <svg
+          viewBox="0 0 24 24"
+          width="22"
+          height="22"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M6 3h8l4 4v14H6V3Zm8 0v5h4M9 12h6m-6 4h6"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+      <a href={localeUrl(locale, 'games/block-tower/terms-of-service')}>
+        {t.terms}
+        <svg
+          viewBox="0 0 24 24"
+          width="22"
+          height="22"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M6 3h8l4 4v14H6V3Zm8 0v5h4M9 12h6m-6 4h6"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </nav>
+  </section>
+</BaseLayout>
