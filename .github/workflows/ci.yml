@@ -31,16 +31,17 @@ jobs:
       - run: npm test
       - run: npx playwright install --with-deps chromium
       - run: npm run test:browser
+      - name: Configure Pages
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        id: pages
+        uses: actions/configure-pages@v5
       - name: Build deployment artifact
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         run: npm run build && npm test
         env:
-          SITE_ORIGIN: ${{ vars.SITE_ORIGIN || 'https://joojik-studio.github.io' }}
-          SITE_BASE_PATH: ${{ vars.SITE_BASE_PATH || '/Website/' }}
+          SITE_ORIGIN: ${{ vars.SITE_ORIGIN || format('https://{0}', steps.pages.outputs.host) }}
+          SITE_BASE_PATH: ${{ vars.SITE_BASE_PATH || steps.pages.outputs.base_path || '/' }}
           SITE_INDEXABLE: ${{ vars.SITE_INDEXABLE || 'false' }}
-      - name: Configure Pages
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-        uses: actions/configure-pages@v5
       - name: Upload website
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4

@@ -75,7 +75,7 @@ All links, font assets, root redirects, social metadata, robots, and sitemap URL
 
 The workflow checks formatting, types, both base paths, and browser behavior before publishing **only `dist/`** on pushes to `main`. Pull requests run checks without deploying. In repository **Settings → Pages**, select **GitHub Actions** as the build source. The workflow can also be run manually from the Actions tab.
 
-To add a domain later, configure it in Pages settings and DNS, then set repository Actions variables `SITE_ORIGIN` to the final origin (for example `https://joojikstudio.ir`) and `SITE_BASE_PATH` to `/`. Run the workflow again. Set `SITE_INDEXABLE` to `true` only when real content is ready; deployment keeps it false by default. No credentials are needed in the repository: publishing uses GitHub's short-lived workflow token.
+The deployment reads the hostname and base path directly from GitHub Pages settings. To use `joojikstudio.ir`, save it as the custom domain in Pages settings, configure DNS, and rerun the workflow. The resulting site uses `https://joojikstudio.ir` with base `/`. Optional repository Actions variables `SITE_ORIGIN` and `SITE_BASE_PATH` override that automatic detection. Set `SITE_INDEXABLE` to `true` only when real content is ready; deployment keeps it false by default. No credentials are needed in the repository: publishing uses GitHub's short-lived workflow token.
 
 Sample pages use `noindex, follow`; robots allows crawling so search engines can read that directive. The sitemap includes both language versions. The root redirect and 404 remain noindex even after enabling indexing.
 
