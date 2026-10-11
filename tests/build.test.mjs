@@ -81,8 +81,54 @@ for (const locale of locales) {
         assert.notEqual($(img).attr('alt'), undefined);
       }
       if (page.includes('policy') || page.includes('terms')) {
-        assert.equal($('.draft-notice').length, 1);
-        assert.equal($('.document-body section').length, 4);
+        const kind = page.split('/').filter(Boolean).at(-1);
+        const source = JSON.parse(
+          await readFile(`src/content/games/block-tower/${kind}.json`, 'utf8'),
+        );
+        const content = source.locales[locale];
+        const normalize = (text) => text.replace(/\s+/g, ' ').trim();
+        assert.equal($('.draft-notice').length, 0);
+        assert.equal($('h1').text(), content.title);
+        assert.equal($('time').attr('datetime'), source.effectiveDate);
+        assert.equal(
+          $('.document-body section').length,
+          content.sections.length,
+        );
+        assert.deepEqual(
+          $('.document-intro')
+            .toArray()
+            .map((el) => normalize($(el).text())),
+          content.introduction.map(normalize),
+        );
+        assert.deepEqual(
+          source.locales.fa.sections.map((s) => s.id),
+          source.locales.en.sections.map((s) => s.id),
+        );
+        assert.equal(
+          new Set(content.sections.map((s) => s.id)).size,
+          content.sections.length,
+        );
+        for (const section of content.sections) {
+          const rendered = $(`section[id="${section.id}"]`);
+          assert.equal(rendered.find('h2').text(), section.title);
+          assert.deepEqual(
+            rendered
+              .find('p')
+              .toArray()
+              .map((el) => normalize($(el).text())),
+            section.paragraphs.map(normalize),
+          );
+          assert.deepEqual(
+            rendered
+              .find('li')
+              .toArray()
+              .map((el) => normalize($(el).text())),
+            section.bullets.map(normalize),
+          );
+        }
+        assert.ok(
+          $('.document-body a[href="mailto:joojik.studio@gmail.com"]').length,
+        );
       }
     });
   }

@@ -567,33 +567,6 @@
   .document-heading h1 {
     font-size: clamp(2.3rem, 6vw, 3.7rem);
   }
-  .draft-notice {
-    display: flex;
-    gap: 14px;
-    padding: 22px;
-    border-radius: 18px;
-    background: var(--accent-surface);
-  }
-  .notice-symbol {
-    border: 1.5px solid var(--accent);
-    border-radius: 50%;
-    inline-size: 24px;
-    block-size: 24px;
-    display: grid;
-    place-items: center;
-    color: var(--accent);
-    font-weight: 700;
-    line-height: 1;
-    flex-shrink: 0;
-    margin-block-start: 3px;
-  }
-  .draft-notice h2 {
-    font-size: 1rem;
-    margin-block-end: 6px;
-  }
-  .draft-notice p {
-    font-size: 0.9rem;
-  }
   .document-body {
     margin-block-start: 36px;
   }
@@ -609,6 +582,24 @@
   }
   .document-body p {
     line-height: 2;
+    margin-block-end: 16px;
+  }
+  .document-date {
+    color: var(--text-secondary);
+    margin-block-end: 24px;
+  }
+  .document-body {
+    overflow-wrap: anywhere;
+  }
+  .document-body ul {
+    padding-inline-start: 24px;
+    margin-block: 16px;
+  }
+  .document-body li + li {
+    margin-block-start: 12px;
+  }
+  .document-body a {
+    text-decoration-line: underline;
   }
   .document-related {
     display: flex;

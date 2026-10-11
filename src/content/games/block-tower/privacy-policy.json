@@ -1,0 +1,189 @@
+{
+  "effectiveDate": "2026-10-11",
+  "locales": {
+    "en": {
+      "title": "Privacy Policy",
+      "introduction": [
+        "This policy explains how Joojik Studio handles information in the Myket and Cafe Bazaar Android versions of Block Tower and when you contact our support team. For privacy questions, contact joojik.studio@gmail.com."
+      ],
+      "sections": [
+        {
+          "id": "local-data",
+          "title": "Data on your device",
+          "paragraphs": [
+            "Block Tower has no game account or cloud progress service and does not ask for your name, phone number or email to play. Progress, unfinished attempts, coins, energy, inventory, settings, acceptance and advertising configuration, review-prompt state and records needed to deliver purchases and prevent duplicate grants are stored in the app's private storage on your device.",
+            "A local save backup helps recover from some file corruption. Android automatic app backup is disabled, and manufacturer device transfers are not guaranteed. Clearing app data, uninstalling or changing devices may lose progress and consumed items; recovery is not guaranteed."
+          ],
+          "bullets": []
+        },
+        {
+          "id": "store-purchases",
+          "title": "Store purchases",
+          "paragraphs": [
+            "The installed version uses Myket or Cafe Bazaar for billing. The game processes product IDs, purchase results, receipts or tokens, and verification and fulfillment information to deliver items and prevent duplicate grants. Required records are kept locally. The store handles your store account and payment information; the game does not receive card details or payment passwords. Prices, verification and restoration may require internet access and the matching store account."
+          ],
+          "bullets": [
+            "Myket privacy policy: https://myket.ir/policies/privacy",
+            "Cafe Bazaar privacy policy: https://cafebazaar.ir/privacy"
+          ]
+        },
+        {
+          "id": "advertising",
+          "title": "Advertising",
+          "paragraphs": [
+            "Myket and Cafe Bazaar versions use Tapsell Mediation with its Legacy adapter. The advertising service starts automatically when the app launches and may initialize before the legal welcome. The game requests ads after acceptance of the Terms and verification of the no-ads entitlement. Ad personalization is enabled in these versions, with no in-game switch to change it. Android advertising-ID controls still apply.",
+            "Tapsell may process app and device information, available advertising and other technical identifiers, network information such as IP addresses, diagnostics, ad impressions and interactions for ad delivery and personalization, measurement, troubleshooting and fraud prevention.",
+            "Rewarded ads are optional. The lifetime no-ads purchase suppresses banners and interstitial ads and provides the relevant reward and continue benefits locally. It does not turn off Analytics or guarantee that advertising SDK initialization and all provider processing stop. Tapsell's privacy policy: https://developer.tapsell.ir/docs/sdk/policies/privacy-policy"
+          ],
+          "bullets": []
+        },
+        {
+          "id": "analytics",
+          "title": "Optional game analytics",
+          "paragraphs": [
+            "We use Google Analytics for Firebase to understand game use, progression and the in-game economy and improve Block Tower. General activity events, such as game entry, level activity and results, coin grants and spending, booster use, purchase fulfillment, ad impressions and rewards, are sent to Google with related values, app version and distribution store.",
+            "The service also processes an app-instance identifier, automatic usage events and technical app, device and network information, which may be used to derive approximate location. These identifiers do not make the data anonymous. The game does not send individual moves or swipes, purchase receipts or tokens, checkout payloads, signatures, names, phone numbers or emails as custom Analytics events.",
+            "In builds with Analytics enabled, collection defaults on after acceptance of the Terms. You can turn off Analytics (آمار بازی) in Settings without limiting play. This stops collection and application event dispatch and clears cached Analytics data on the device; it does not delete data already uploaded to Google. Firebase advertising-ID collection and advertising personalization are disabled independently of Tapsell's advertising settings.",
+            "The game discards custom events generated while offline. Once an event is handed to Firebase, its SDK controls batching, caching and uploading."
+          ],
+          "bullets": [
+            "How Google uses information from apps that use its services: https://policies.google.com/technologies/partner-sites",
+            "Google privacy policy: https://policies.google.com/privacy"
+          ]
+        },
+        {
+          "id": "support",
+          "title": "Support messages",
+          "paragraphs": [
+            "If you email joojik.studio@gmail.com, we receive your sender address, message and any attachments you choose to send through Gmail to respond and resolve your request. Do not send passwords, card details or unnecessary sensitive information. Google's privacy policy also applies to Gmail: https://policies.google.com/privacy"
+          ],
+          "bullets": []
+        },
+        {
+          "id": "retention-and-privacy-requests",
+          "title": "Retention and your privacy requests",
+          "paragraphs": [
+            "Local records remain until removed or reset. Support correspondence is kept as needed to handle requests, disputes and legal duties. Retention by Google, Tapsell and the stores depends on service settings and the relevant provider policies.",
+            "Clearing local data, turning off Analytics or buying no ads does not automatically delete records held by those providers. For questions or requests to access, correct or delete information, contact joojik.studio@gmail.com. Handling provider-held data depends on identifying the relevant records and the service's available procedures; remote deletion is not guaranteed. Your applicable legal rights remain unaffected."
+          ],
+          "bullets": []
+        },
+        {
+          "id": "security-and-international-processing",
+          "title": "Security and processing locations",
+          "paragraphs": [
+            "App-private storage and receipt verification help reduce risk, but no storage or communication method guarantees absolute security. Third-party services may process information on servers outside your country under their policies."
+          ],
+          "bullets": []
+        },
+        {
+          "id": "audience",
+          "title": "Intended audience",
+          "paragraphs": ["Block Tower is intended for teens and adults."],
+          "bullets": []
+        },
+        {
+          "id": "changes-and-contact",
+          "title": "Changes and contact",
+          "paragraphs": [
+            "We will give appropriate notice of material changes to how information is used and seek fresh permission where required. Current legal documents are accessible through Settings, About Us in the game. Contact Joojik Studio at joojik.studio@gmail.com."
+          ],
+          "bullets": []
+        }
+      ]
+    },
+    "fa": {
+      "title": "سیاست حریم خصوصی",
+      "introduction": [
+        "این سیاست توضیح می‌دهد جوجیک استودیو (Joojik Studio) در نسخه‌های اندرویدی مایکت و کافه‌بازارِ Block Tower و هنگام تماس شما با پشتیبانی، چگونه اطلاعات را پردازش می‌کند. برای پرسش‌های حریم خصوصی با joojik.studio@gmail.com تماس بگیرید."
+      ],
+      "sections": [
+        {
+          "id": "local-data",
+          "title": "داده‌های روی دستگاه شما",
+          "paragraphs": [
+            "Block Tower حساب کاربری یا ذخیرهٔ ابریِ پیشرفت ندارد و برای بازی‌کردن نام، شمارهٔ تلفن یا ایمیل نمی‌خواهد. پیشرفت، تلاش‌های ناتمام مراحل، سکه، انرژی، اقلام، تنظیمات، وضعیت پذیرش شرایط و تنظیمات تبلیغاتی، وضعیت درخواست امتیاز و سوابق لازم برای تحویل خرید و جلوگیری از تحویل تکراری، در فضای اختصاصی برنامه روی دستگاه ذخیره می‌شوند.",
+            "نسخهٔ پشتیبان محلی به بازیابی برخی خرابی‌های فایل کمک می‌کند. پشتیبان‌گیری خودکار Android غیرفعال است و انتقال داده توسط سازندهٔ دستگاه تضمین نمی‌شود. پاک‌کردن داده‌های برنامه، حذف برنامه یا تعویض دستگاه ممکن است پیشرفت و اقلام مصرف‌شده را از بین ببرد؛ بازیابی تضمین‌شده نیست."
+          ],
+          "bullets": []
+        },
+        {
+          "id": "store-purchases",
+          "title": "خرید از فروشگاه",
+          "paragraphs": [
+            "نسخهٔ نصب‌شده برای پرداخت از مایکت یا کافه‌بازار استفاده می‌کند. بازی شناسهٔ محصول، نتیجهٔ خرید، رسید یا توکن و اطلاعات تأیید و تحویل را برای ارائهٔ اقلام و جلوگیری از تحویل تکراری پردازش می‌کند. سوابق لازم به‌صورت محلی نگهداری می‌شوند. اطلاعات حساب فروشگاه و پرداخت را فروشگاه پردازش می‌کند؛ بازی اطلاعات کارت یا رمز پرداخت را دریافت نمی‌کند. دریافت قیمت، تأیید و بازیابی ممکن است به اینترنت و حساب همان فروشگاه نیاز داشته باشد."
+          ],
+          "bullets": [
+            "سیاست حریم خصوصی مایکت: https://myket.ir/policies/privacy",
+            "سیاست حریم خصوصی کافه‌بازار: https://cafebazaar.ir/privacy"
+          ]
+        },
+        {
+          "id": "advertising",
+          "title": "تبلیغات",
+          "paragraphs": [
+            "نسخه‌های مایکت و کافه‌بازار از Tapsell Mediation با آداپتر Legacy استفاده می‌کنند. سرویس تبلیغاتی هنگام شروع برنامه خودکار راه‌اندازی می‌شود و ممکن است پیش از نمایش صفحهٔ پذیرش شرایط آغاز به کار کند. بازی پس از پذیرش شرایط استفاده و بررسی وضعیت خرید حذف تبلیغات، درخواست تبلیغ می‌دهد. شخصی‌سازی تبلیغات در این نسخه‌ها فعال است و گزینه‌ای در بازی برای تغییر آن وجود ندارد. کنترل‌های شناسهٔ تبلیغاتی Android همچنان برقرارند.",
+            "تپسل ممکن است اطلاعات برنامه و دستگاه، شناسهٔ تبلیغاتیِ در دسترس و دیگر شناسه‌های فنی، اطلاعات شبکه مانند نشانی IP، داده‌های عیب‌یابی و اطلاعات نمایش و تعامل با تبلیغ را برای ارائه و شخصی‌سازی تبلیغ، سنجش، رفع اشکال و مقابله با تقلب پردازش کند.",
+            "تبلیغات پاداش‌دار اختیاری‌اند. خرید دائمی حذف تبلیغات، بنر و تبلیغات بین‌مرحله‌ای را متوقف می‌کند و مزایای مربوط به پاداش و ادامهٔ بازی را محلی فراهم می‌سازد. این خرید آمار بازی را خاموش نمی‌کند و توقف راه‌اندازی SDK تبلیغاتی و همهٔ پردازش‌های ارائه‌دهنده را تضمین نمی‌کند. سیاست حریم خصوصی تپسل: https://developer.tapsell.ir/docs/sdk/policies/privacy-policy"
+          ],
+          "bullets": []
+        },
+        {
+          "id": "analytics",
+          "title": "آمار اختیاری بازی",
+          "paragraphs": [
+            "برای شناخت استفاده، پیشرفت و اقتصاد درون‌بازی و بهبود Block Tower از Google Analytics for Firebase استفاده می‌کنیم. رویدادهای کلی مانند ورود به بازی، فعالیت و نتیجهٔ مراحل، دریافت و خرج سکه، استفاده از کمک‌ها، تحویل خرید، نمایش تبلیغ و پاداش‌ها، همراه با مقادیر مربوط، نسخهٔ برنامه و فروشگاه توزیع به Google ارسال می‌شوند.",
+            "این سرویس شناسهٔ نمونهٔ برنامه، رویدادهای خودکار استفاده و اطلاعات فنی برنامه، دستگاه و شبکه را نیز پردازش می‌کند؛ اطلاعات شبکه ممکن است برای تعیین موقعیت تقریبی استفاده شود. وجود این شناسه‌ها به معنی ناشناس‌بودن داده نیست. بازی حرکت‌ها یا کشیدن‌های تک‌به‌تک، رسید یا توکن خرید، داده‌های درخواست پرداخت، امضاها، نام، شمارهٔ تلفن یا ایمیل را به‌عنوان رویداد سفارشی آمار ارسال نمی‌کند.",
+            "در نسخه‌هایی که آمار فعال است، جمع‌آوری پس از پذیرش شرایط استفاده به‌طور پیش‌فرض روشن می‌شود. می‌توانید «آمار بازی» را از تنظیمات خاموش کنید، بدون اینکه بازی محدود شود. این کار جمع‌آوری و ارسال رویدادهای برنامه را متوقف و داده‌های آماری ذخیره‌شده روی دستگاه را پاک می‌کند؛ داده‌های قبلاً ارسال‌شده به Google حذف نمی‌شوند. جمع‌آوری شناسهٔ تبلیغاتی و شخصی‌سازی تبلیغاتی در Firebase، مستقل از تنظیمات تبلیغاتی تپسل، غیرفعال است.",
+            "بازی رویدادهای سفارشی ایجادشده در حالت آفلاین را کنار می‌گذارد. پس از تحویل رویداد به Firebase، دسته‌بندی، ذخیرهٔ موقت و بارگذاری آن توسط SDK همان سرویس انجام می‌شود."
+          ],
+          "bullets": [
+            "نحوهٔ استفادهٔ Google از اطلاعات برنامه‌هایی که از خدماتش استفاده می‌کنند: https://policies.google.com/technologies/partner-sites",
+            "سیاست حریم خصوصی Google: https://policies.google.com/privacy"
+          ]
+        },
+        {
+          "id": "support",
+          "title": "پیام‌های پشتیبانی",
+          "paragraphs": [
+            "اگر به joojik.studio@gmail.com ایمیل بفرستید، نشانی فرستنده، پیام و پیوست‌هایی که خودتان ارسال می‌کنید از طریق Gmail برای پاسخ و رسیدگی به درخواست دریافت می‌شوند. رمز، اطلاعات کارت یا دادهٔ حساس غیرضروری نفرستید. سیاست حریم خصوصی Google دربارهٔ Gmail نیز اعمال می‌شود: https://policies.google.com/privacy"
+          ],
+          "bullets": []
+        },
+        {
+          "id": "retention-and-privacy-requests",
+          "title": "نگهداری داده و درخواست‌های حریم خصوصی",
+          "paragraphs": [
+            "سوابق محلی تا زمان حذف یا بازنشانی باقی می‌مانند. مکاتبات پشتیبانی تا زمان نیاز برای رسیدگی به درخواست، اختلاف یا تکلیف قانونی نگهداری می‌شوند. نگهداری داده نزد Google، تپسل و فروشگاه‌ها به تنظیمات خدمات و سیاست‌های ارائه‌دهندهٔ مربوط بستگی دارد.",
+            "پاک‌کردن داده‌های محلی، خاموش‌کردن آمار یا خرید حذف تبلیغات، سوابق نزد این ارائه‌دهندگان را خودکار حذف نمی‌کند. برای پرسش یا درخواست دسترسی، اصلاح یا حذف اطلاعات با joojik.studio@gmail.com تماس بگیرید. رسیدگی به داده‌های نزد ارائه‌دهندگان به شناسایی سوابق مربوط و روش‌های در دسترس آن خدمت بستگی دارد؛ حذف داده از سرور تضمین‌شده نیست. حقوق قانونی قابل اعمال شما محفوظ است."
+          ],
+          "bullets": []
+        },
+        {
+          "id": "security-and-international-processing",
+          "title": "امنیت و محل پردازش",
+          "paragraphs": [
+            "فضای اختصاصی برنامه و بررسی اعتبار رسید به کاهش خطر کمک می‌کنند، ولی هیچ روش ذخیره یا ارتباطی امنیت مطلق را تضمین نمی‌کند. خدمات ثالث ممکن است طبق سیاست‌های خود، اطلاعات را روی سرورهای خارج از کشور شما پردازش کنند."
+          ],
+          "bullets": []
+        },
+        {
+          "id": "audience",
+          "title": "مخاطبان بازی",
+          "paragraphs": [
+            "Block Tower برای نوجوانان و بزرگسالان طراحی شده است."
+          ],
+          "bullets": []
+        },
+        {
+          "id": "changes-and-contact",
+          "title": "تغییرات و تماس",
+          "paragraphs": [
+            "تغییرات مهم در نحوهٔ استفاده از اطلاعات را به‌شکل متناسب اطلاع می‌دهیم و هرجا لازم باشد اجازهٔ تازه می‌گیریم. اسناد حقوقی جاری از بخش «دربارهٔ ما» در تنظیمات بازی در دسترس‌اند. راه تماس با جوجیک استودیو: joojik.studio@gmail.com."
+          ],
+          "bullets": []
+        }
+      ]
+    }
+  }
+}

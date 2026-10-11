@@ -19,16 +19,6 @@ export function assetUrl(path: string) {
   return `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
 }
 
-interface LegalSection {
-  heading: string;
-  body: string;
-}
-interface LegalContent {
-  title: string;
-  description: string;
-  intro: string;
-  sections: LegalSection[];
-}
 interface Copy {
   brand: string;
   navLabel: string;
@@ -63,11 +53,9 @@ interface Copy {
   privacy: string;
   terms: string;
   backToGame: string;
-  draftTitle: string;
-  draftDescription: string;
+  effectiveDate: string;
   notFoundTitle: string;
   notFoundDescription: string;
-  legal: Record<LegalKind, LegalContent>;
 }
 
 export const copy: Record<Locale, Copy> = {
@@ -112,64 +100,10 @@ export const copy: Record<Locale, Copy> = {
     privacy: 'Privacy policy',
     terms: 'Terms of service',
     backToGame: 'Back to Block Tower',
-    draftTitle: 'Sample document',
-    draftDescription:
-      'This text is a layout preview. It is not the final privacy policy or terms of service for Block Tower.',
+    effectiveDate: 'Effective date',
     notFoundTitle: 'This little corner is empty.',
     notFoundDescription:
       'We couldn’t find that page. Head back to the studio and find your way from there.',
-    legal: {
-      'privacy-policy': {
-        title: 'Privacy policy',
-        description:
-          'Sample privacy policy page for Block Tower by Joojik Studio.',
-        intro:
-          'This page will explain how information is handled in connection with Block Tower. The sections below are placeholders for the final policy.',
-        sections: [
-          {
-            heading: 'Information and its use',
-            body: 'The final policy will describe any information handled by the game, why it is needed, and how it is used. These details will be added after the game’s services and integrations are confirmed.',
-          },
-          {
-            heading: 'Services and storage',
-            body: 'This section will identify any relevant third-party services and explain applicable storage and retention practices. It does not currently describe the game’s actual data practices.',
-          },
-          {
-            heading: 'Your questions',
-            body: 'Privacy questions, available choices, and the appropriate contact information will be explained here in the final version.',
-          },
-          {
-            heading: 'Updates to this page',
-            body: 'When the final policy is published, this section will explain how changes are communicated and display the effective date.',
-          },
-        ],
-      },
-      'terms-of-service': {
-        title: 'Terms of service',
-        description:
-          'Sample terms of service page for Block Tower by Joojik Studio.',
-        intro:
-          'This page will describe the terms that apply to using Block Tower. The text below is a structural example, rather than an agreement ready for use.',
-        sections: [
-          {
-            heading: 'Using the game',
-            body: 'The final terms will explain the conditions for accessing and using the game. Any applicable eligibility requirements and player responsibilities will be set out here.',
-          },
-          {
-            heading: 'Game content',
-            body: 'This section will describe rights relating to the game’s content and any permissions or restrictions that apply. The wording will be completed for the released game.',
-          },
-          {
-            heading: 'Availability and changes',
-            body: 'The final document will explain relevant service conditions, updates, and changes. This sample does not promise any particular availability or feature.',
-          },
-          {
-            heading: 'Questions about these terms',
-            body: 'Contact details, applicable provisions, and an effective date will be added when the final terms are prepared.',
-          },
-        ],
-      },
-    },
   },
   fa: {
     brand: 'استودیو جوجیک',
@@ -212,63 +146,9 @@ export const copy: Record<Locale, Copy> = {
     privacy: 'حریم خصوصی',
     terms: 'شرایط استفاده',
     backToGame: 'بازگشت به Block Tower',
-    draftTitle: 'سند نمونه',
-    draftDescription:
-      'این متن فقط پیش‌نمایش صفحه است و سیاست حریم خصوصی یا شرایط استفادهٔ نهایی Block Tower نیست.',
+    effectiveDate: 'تاریخ اجرا',
     notFoundTitle: 'این گوشه هنوز خالی است.',
     notFoundDescription:
       'این صفحه را پیدا نکردیم. به استودیو برگردید و مسیرتان را از آنجا ادامه دهید.',
-    legal: {
-      'privacy-policy': {
-        title: 'حریم خصوصی',
-        description:
-          'صفحهٔ نمونهٔ حریم خصوصی بازی Block Tower از استودیو جوجیک.',
-        intro:
-          'این صفحه توضیح خواهد داد که اطلاعات مرتبط با Block Tower چگونه مدیریت می‌شوند. بخش‌های زیر جای نگهدارندهٔ متن نهایی هستند.',
-        sections: [
-          {
-            heading: 'اطلاعات و کاربرد آن‌ها',
-            body: 'در نسخهٔ نهایی، اطلاعاتی که بازی مدیریت می‌کند، دلیل نیاز به آن‌ها و شیوهٔ استفاده از آن‌ها توضیح داده خواهد شد. این جزئیات پس از مشخص شدن سرویس‌ها و یکپارچه‌سازی‌های بازی اضافه می‌شوند.',
-          },
-          {
-            heading: 'سرویس‌ها و نگهداری اطلاعات',
-            body: 'این بخش، سرویس‌های شخص ثالث مرتبط و روش‌های ذخیره و نگهداری اطلاعات را معرفی خواهد کرد. متن فعلی بیانگر شیوهٔ واقعی مدیریت داده در بازی نیست.',
-          },
-          {
-            heading: 'پرسش‌های شما',
-            body: 'در نسخهٔ نهایی، راه طرح پرسش‌های مربوط به حریم خصوصی، انتخاب‌های در دسترس و اطلاعات تماس مناسب در این بخش توضیح داده می‌شود.',
-          },
-          {
-            heading: 'به‌روزرسانی این صفحه',
-            body: 'هنگام انتشار سیاست نهایی، در این بخش نحوهٔ اطلاع‌رسانی تغییرات و تاریخ اجرای آن مشخص خواهد شد.',
-          },
-        ],
-      },
-      'terms-of-service': {
-        title: 'شرایط استفاده',
-        description:
-          'صفحهٔ نمونهٔ شرایط استفاده از بازی Block Tower استودیو جوجیک.',
-        intro:
-          'این صفحه شرایط استفاده از Block Tower را توضیح خواهد داد. متن زیر نمونه‌ای از ساختار سند است و توافق‌نامهٔ آمادهٔ استفاده نیست.',
-        sections: [
-          {
-            heading: 'استفاده از بازی',
-            body: 'شرایط نهایی، ضوابط دسترسی و استفاده از بازی را توضیح خواهد داد. هرگونه شرط لازم برای استفاده و مسئولیت‌های بازیکنان در این بخش مشخص می‌شود.',
-          },
-          {
-            heading: 'محتوای بازی',
-            body: 'در این بخش حقوق مرتبط با محتوای بازی و مجوزها یا محدودیت‌های مربوط توضیح داده خواهد شد. متن آن برای نسخهٔ منتشرشدهٔ بازی تکمیل می‌شود.',
-          },
-          {
-            heading: 'دسترسی و تغییرات',
-            body: 'سند نهایی، شرایط مرتبط با سرویس، به‌روزرسانی‌ها و تغییرات را شرح خواهد داد. این نمونه، دسترسی یا ویژگی خاصی را وعده نمی‌دهد.',
-          },
-          {
-            heading: 'پرسش دربارهٔ این شرایط',
-            body: 'هنگام آماده شدن شرایط نهایی، اطلاعات تماس، مقررات مربوط و تاریخ اجرا در این بخش اضافه خواهد شد.',
-          },
-        ],
-      },
-    },
   },
 };

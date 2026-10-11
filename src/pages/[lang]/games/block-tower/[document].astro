@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import { legalDocuments } from '@/data/legal';
+import LegalText from '@/components/LegalText.astro';
 import LocalizedText from '@/components/LocalizedText.astro';
 import { copy, localeUrl, locales, type LegalKind, type Locale } from '@/i18n';
 export function getStaticPaths() {
@@ -12,14 +14,23 @@ export function getStaticPaths() {
 const locale = Astro.params.lang as Locale;
 const document = Astro.params.document as LegalKind;
 const t = copy[locale];
-const content = t.legal[document];
+const policy = legalDocuments[document];
+const content = policy.locales[locale];
+const effectiveDate = new Intl.DateTimeFormat(
+  locale === 'fa' ? 'fa-IR' : 'en-GB',
+  {
+    dateStyle: 'long',
+    timeZone: 'UTC',
+  },
+).format(new Date(`${policy.effectiveDate}T00:00:00Z`));
 ---
 
 <BaseLayout
   locale={locale}
   path={`games/block-tower/${document}`}
   title={`${content.title} | Block Tower | ${t.brand}`}
-  description={content.description}
+  description={content.introduction[0]}
+  sampleContent={false}
   game
 >
   <article class="legal-document shell">
@@ -37,25 +48,33 @@ const content = t.legal[document];
       </p>
       <h1>{content.title}</h1>
     </header>
-    <aside class="draft-notice" aria-labelledby="draft-title">
-      <span class="notice-symbol" aria-hidden="true">
-        i
-      </span>
-      <div>
-        <h2 id="draft-title">{t.draftTitle}</h2>
-        <p>
-          <LocalizedText text={t.draftDescription} />
-        </p>
-      </div>
-    </aside>
+    <p class="document-date">
+      {t.effectiveDate}:{' '}
+      <time datetime={policy.effectiveDate}>{effectiveDate}</time>
+    </p>
     <div class="document-body">
-      <p class="document-intro">
-        <LocalizedText text={content.intro} />
-      </p>
+      {content.introduction.map((paragraph) => (
+        <p class="document-intro">
+          <LegalText text={paragraph} />
+        </p>
+      ))}
       {content.sections.map((section) => (
-        <section>
-          <h2>{section.heading}</h2>
-          <p>{section.body}</p>
+        <section id={section.id} aria-labelledby={`${section.id}-title`}>
+          <h2 id={`${section.id}-title`}>{section.title}</h2>
+          {section.paragraphs.map((paragraph) => (
+            <p>
+              <LegalText text={paragraph} />
+            </p>
+          ))}
+          {section.bullets.length > 0 && (
+            <ul>
+              {section.bullets.map((bullet) => (
+                <li>
+                  <LegalText text={bullet} />
+                </li>
+              ))}
+            </ul>
+          )}
         </section>
       ))}
     </div>

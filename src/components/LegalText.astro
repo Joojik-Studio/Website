@@ -1,0 +1,27 @@
+---
+import LocalizedText from './LocalizedText.astro';
+interface Props {
+  text: string;
+}
+const { text } = Astro.props;
+// Render plain text safely; only explicit HTTPS URLs and email addresses become links.
+const parts = text.split(
+  /(https:\/\/[^\s<>"\u0600-\u06ff]+|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})/g,
+);
+---
+
+{parts.map((part) => {
+  const link = part.replace(/[.,;:!?\)]+$/, '');
+  const isUrl = link.startsWith('https://');
+  const isEmail = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(link);
+  return isUrl || isEmail ? (
+    <>
+      <a href={isUrl ? link : `mailto:${link}`}>
+        <bdi dir="ltr">{link}</bdi>
+      </a>
+      {part.slice(link.length)}
+    </>
+  ) : (
+    <LocalizedText text={part} />
+  );
+})}

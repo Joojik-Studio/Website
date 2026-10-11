@@ -3,8 +3,9 @@ import { assetUrl, copy, localeUrl, type Locale } from '@/i18n';
 interface Props {
   locale: Locale;
   game?: boolean;
+  sampleContent?: boolean;
 }
-const { locale, game = false } = Astro.props;
+const { locale, game = false, sampleContent = true } = Astro.props;
 const t = copy[locale];
 ---
 
@@ -42,8 +43,10 @@ const t = copy[locale];
         Joojik Studio
       </bdi>
     </small>
-    <small>
-      {t.sampleLabel}. {t.sampleNote}
-    </small>
+    {sampleContent && (
+      <small>
+        {t.sampleLabel}. {t.sampleNote}
+      </small>
+    )}
   </div>
 </footer>

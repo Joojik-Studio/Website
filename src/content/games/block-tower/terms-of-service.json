@@ -1,0 +1,141 @@
+{
+  "effectiveDate": "2026-10-11",
+  "locales": {
+    "en": {
+      "title": "Terms of Service",
+      "introduction": [
+        "These Terms apply to the Myket and Cafe Bazaar Android versions of Block Tower, provided by Joojik Studio. For support or questions about these Terms, contact joojik.studio@gmail.com."
+      ],
+      "sections": [
+        {
+          "id": "acceptance-and-audience",
+          "title": "Acceptance and intended audience",
+          "paragraphs": [
+            "Choosing Agree and continue in the game accepts these Terms. Reading a legal document or navigating back does not accept them. Block Tower is intended for teens and adults. Obtain a parent or legal guardian's authorization for purchases where required.",
+            "The Privacy Policy explains data handling and the available controls. Accepting these Terms does not replace any separate permission required by law."
+          ],
+          "bullets": []
+        },
+        {
+          "id": "use-and-ownership",
+          "title": "Use of the game and ownership",
+          "paragraphs": [
+            "You may use the game for personal entertainment. Its branding, software, artwork, audio and levels belong to Joojik Studio or their licensors. Unauthorized commercial redistribution, payment fraud and cheating or interference that harms the game, its services or other people are not permitted. This does not restrict rights that applicable law preserves for you."
+          ],
+          "bullets": []
+        },
+        {
+          "id": "purchases-and-virtual-items",
+          "title": "Optional purchases and virtual items",
+          "paragraphs": [
+            "Purchases are optional. The selected store displays the final price and currency before you confirm payment. Coins and virtual items are for use in the game, with no guaranteed cash redemption or transfer.",
+            "Consumed items generally cannot be restored. Restoration of eligible purchases, such as the lifetime no-ads entitlement, depends on the matching store account, purchase records and verification."
+          ],
+          "bullets": []
+        },
+        {
+          "id": "payments-and-refunds",
+          "title": "Payments and refunds",
+          "paragraphs": [
+            "The store processes payments and refund requests under its rules and applicable consumer rights. For a purchase problem or refund request, use the relevant store's support process and contact us if needed. The order ID and store name can help us investigate; do not send card details or payment passwords. These Terms do not remove statutory refund rights."
+          ],
+          "bullets": []
+        },
+        {
+          "id": "advertising-and-analytics",
+          "title": "Advertising and optional analytics",
+          "paragraphs": [
+            "The game may show ads; rewarded ads are optional. The Privacy Policy explains advertising data processing, personalization and the effect of the no-ads purchase.",
+            "Where enabled, Google Analytics for Firebase measures general game use to help us improve the game. Collection defaults on after acceptance of the Terms and can be turned off using Analytics (آمار بازی) in Settings without limiting play. This control is separate from advertising; see the Privacy Policy for details."
+          ],
+          "bullets": []
+        },
+        {
+          "id": "updates-and-local-progress",
+          "title": "Updates and local progress",
+          "paragraphs": [
+            "We may update the game to fix problems or change or add content. No schedule or number of future levels is guaranteed.",
+            "There is no game account or cloud progress service. Progress is stored on your device. Uninstalling, clearing app data, corruption or changing devices may lose progress and consumed items. Recovery of all data is not guaranteed. These limitations do not exclude responsibilities or rights that cannot be waived under applicable law."
+          ],
+          "bullets": []
+        },
+        {
+          "id": "changes-and-contact",
+          "title": "Changes and contact",
+          "paragraphs": [
+            "Current Terms and the Privacy Policy are accessible through Settings, About Us in the game. We will give appropriate notice of material changes and seek fresh permission where required. Contact Joojik Studio at joojik.studio@gmail.com."
+          ],
+          "bullets": []
+        }
+      ]
+    },
+    "fa": {
+      "title": "شرایط استفاده",
+      "introduction": [
+        "این شرایط دربارهٔ نسخه‌های اندرویدی مایکت و کافه‌بازارِ Block Tower، ارائه‌شده توسط جوجیک استودیو (Joojik Studio)، است. برای پشتیبانی یا پرسش دربارهٔ این شرایط با joojik.studio@gmail.com تماس بگیرید."
+      ],
+      "sections": [
+        {
+          "id": "acceptance-and-audience",
+          "title": "پذیرش شرایط و مخاطبان بازی",
+          "paragraphs": [
+            "با انتخاب «موافقم و ادامه» در بازی، این شرایط را می‌پذیرید. خواندن سند حقوقی یا بازگشت به صفحهٔ قبل به معنی پذیرش نیست. Block Tower برای نوجوانان و بزرگسالان طراحی شده است. هرجا برای خرید به اجازهٔ والد یا سرپرست قانونی نیاز دارید، آن را بگیرید.",
+            "سیاست حریم خصوصی، نحوهٔ پردازش داده و کنترل‌های در دسترس را توضیح می‌دهد. پذیرش این شرایط جایگزین اجازهٔ جداگانه‌ای که قانون لازم می‌داند نیست."
+          ],
+          "bullets": []
+        },
+        {
+          "id": "use-and-ownership",
+          "title": "استفاده از بازی و مالکیت",
+          "paragraphs": [
+            "می‌توانید برای سرگرمی شخصی از بازی استفاده کنید. حقوق نام و نشان، نرم‌افزار، تصاویر، صداها و مراحل متعلق به جوجیک استودیو یا صاحبان مجوز آن‌هاست. بازنشر تجاری بدون اجازه، تقلب در پرداخت و تقلب یا مداخله‌ای که به بازی، خدمات آن یا دیگران آسیب برساند مجاز نیست. حقوقی که قانون قابل اعمال برای شما محفوظ می‌داند محدود نمی‌شود."
+          ],
+          "bullets": []
+        },
+        {
+          "id": "purchases-and-virtual-items",
+          "title": "خریدهای اختیاری و اقلام مجازی",
+          "paragraphs": [
+            "خرید اختیاری است. فروشگاه مربوط، قیمت و واحد پول نهایی را پیش از تأیید پرداخت نشان می‌دهد. سکه و اقلام مجازی برای استفاده در بازی‌اند و تبدیل به پول نقد یا انتقال آن‌ها تضمین نمی‌شود.",
+            "اقلام مصرف‌شده معمولاً قابل بازیابی نیستند. بازیابی خریدهای واجد شرایط، مانند حق دائمی حذف تبلیغات، به حساب همان فروشگاه، سوابق خرید و تأیید آن بستگی دارد."
+          ],
+          "bullets": []
+        },
+        {
+          "id": "payments-and-refunds",
+          "title": "پرداخت و بازپرداخت",
+          "paragraphs": [
+            "پرداخت و درخواست بازپرداخت از طریق فروشگاه و طبق مقررات آن و حقوق مصرف‌کنندهٔ قابل اعمال انجام می‌شود. برای مشکل خرید یا درخواست بازپرداخت از مسیر پشتیبانی همان فروشگاه اقدام کنید و در صورت نیاز با ما تماس بگیرید. شناسهٔ سفارش و نام فروشگاه به بررسی کمک می‌کند؛ اطلاعات کارت یا رمز پرداخت را نفرستید. این شرایط حقوق قانونی بازپرداخت را حذف نمی‌کند."
+          ],
+          "bullets": []
+        },
+        {
+          "id": "advertising-and-analytics",
+          "title": "تبلیغات و آمار اختیاری",
+          "paragraphs": [
+            "بازی ممکن است تبلیغات نمایش دهد؛ تبلیغات پاداش‌دار اختیاری‌اند. سیاست حریم خصوصی، پردازش داده‌های تبلیغاتی، شخصی‌سازی و اثر خرید حذف تبلیغات را توضیح می‌دهد.",
+            "در نسخه‌های فعال، Google Analytics for Firebase استفادهٔ کلی از بازی را برای کمک به بهبود آن می‌سنجد. جمع‌آوری پس از پذیرش شرایط استفاده به‌طور پیش‌فرض روشن است و می‌توانید «آمار بازی» را از تنظیمات خاموش کنید، بدون اینکه بازی محدود شود. این کنترل مستقل از تبلیغات است؛ جزئیات در سیاست حریم خصوصی آمده است."
+          ],
+          "bullets": []
+        },
+        {
+          "id": "updates-and-local-progress",
+          "title": "به‌روزرسانی و پیشرفت محلی",
+          "paragraphs": [
+            "ممکن است بازی را برای رفع مشکل یا تغییر و افزودن محتوا به‌روزرسانی کنیم. زمان‌بندی یا تعداد مراحل آینده تضمین نمی‌شود.",
+            "بازی حساب کاربری یا ذخیرهٔ ابریِ پیشرفت ندارد. پیشرفت روی دستگاه شما نگهداری می‌شود. حذف برنامه، پاک‌کردن داده‌ها، خرابی یا تعویض دستگاه ممکن است پیشرفت و اقلام مصرف‌شده را از بین ببرد. بازیابی همهٔ داده‌ها تضمین‌شده نیست. این محدودیت‌ها مسئولیت‌ها یا حقوقی را که طبق قانون قابل اعمال نمی‌توان از آن‌ها چشم‌پوشی کرد، حذف نمی‌کنند."
+          ],
+          "bullets": []
+        },
+        {
+          "id": "changes-and-contact",
+          "title": "تغییرات و تماس",
+          "paragraphs": [
+            "شرایط استفاده و سیاست حریم خصوصی جاری از بخش «دربارهٔ ما» در تنظیمات بازی در دسترس‌اند. تغییرات مهم را به‌شکل متناسب اطلاع می‌دهیم و هرجا لازم باشد اجازهٔ تازه می‌گیریم. راه تماس با جوجیک استودیو: joojik.studio@gmail.com."
+          ],
+          "bullets": []
+        }
+      ]
+    }
+  }
+}

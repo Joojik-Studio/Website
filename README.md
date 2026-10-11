@@ -33,7 +33,8 @@ The public configuration is `/configs/block-tower.json`, initially `{}`. Do not 
 
 ## Editing content and appearance
 
-- `src/i18n/index.ts`: typed Persian and English UI strings and sample content, including legal sections. Replace the sample legal documents with final documents before release.
+- `src/i18n/index.ts`: typed Persian and English UI strings and sample marketing content.
+- `src/content/games/block-tower/privacy-policy.json` and `terms-of-service.json`: supplied legal documents, each containing an ISO effective date and matching `en`/`fa` titles, introductions, and ordered sections with stable IDs, paragraphs, and optional bullet lists. Edit these files to update the legal pages. Text is rendered safely, URLs and emails become links, and the effective date is localized. Keep section IDs identical across languages. Legal pages do not display sample-content notices; marketing pages remain previews.
 - `src/data/games.ts`: Block Tower's accent colors and store links. Add real HTTPS links with both Persian and English labels to the `stores` array; until then the download area displays a coming-soon message. Update the hero/download copy at the same time when announcing availability.
 - `src/styles/global.css`: shared neutral/text colors, spacing, layouts, and typography. A game can change accent colors and artwork without changing those shared values.
 

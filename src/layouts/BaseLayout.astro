@@ -18,6 +18,7 @@ interface Props {
   path: string;
   game?: boolean;
   notFound?: boolean;
+  sampleContent?: boolean;
 }
 const {
   locale,
@@ -26,6 +27,7 @@ const {
   path,
   game = false,
   notFound = false,
+  sampleContent = true,
 } = Astro.props;
 const absolute = (pathname: string) => new URL(pathname, Astro.site).href;
 const canonical = absolute(localeUrl(locale, path));
@@ -111,6 +113,6 @@ const theme = game
     <main id="main" tabindex="-1">
       <slot />
     </main>
-    <Footer locale={locale} game={game} />
+    <Footer locale={locale} game={game} sampleContent={sampleContent} />
   </body>
 </html>
