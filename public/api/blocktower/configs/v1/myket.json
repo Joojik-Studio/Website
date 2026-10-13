@@ -7,7 +7,7 @@
     "offers": [
       {
         "id": "energy.single",
-        "price": 30,
+        "price": 40,
         "quantity": 1,
         "enabled": true
       },
