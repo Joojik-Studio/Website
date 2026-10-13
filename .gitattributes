@@ -1,0 +1,2 @@
+# Game clients verify localization hashes against the exact published bytes.
+public/api/blocktower/configs/** -text
