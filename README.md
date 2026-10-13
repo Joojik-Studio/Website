@@ -33,6 +33,15 @@ The public configuration is `/configs/block-tower.json`, initially `{}`. Do not 
 
 ## Editing content and appearance
 
+Block Tower's public app resources live in `public/api/blocktower/configs/v1/`:
+
+- `myket.json` and `bazaar.json`: store configurations.
+- `localization/fa/1.json`: versioned Persian translations.
+
+Their public URLs use the same paths without `public/`, under `https://joojikstudio.ir/`. These are raw static JSON files, independent of the website language routes. Preserve their exact UTF-8 bytes; `.gitattributes` disables line-ending conversion for these resources. The build tests verify that published bytes match the source and that both configs' `localization.sha256` matches the translation. Do not format the translation or overwrite a published translation version: add a new numbered file, deploy and verify it first, then update the configs' path, version, and SHA-256 together. Keep `/v1/` available when adding API versions.
+
+GitHub Pages controls HTTP response headers. These JSON resources are served as `application/json; charset=utf-8`, with ETags and support for conditional requests. The observed cache policy is `Cache-Control: max-age=600`; this repository cannot set `no-cache` for configs or an immutable translation cache policy. Clients must allow for the host's cache lifetime. Exact custom cache policies require an additional hosting or proxy configuration.
+
 - `src/i18n/index.ts`: typed Persian and English UI strings and sample marketing content.
 - `src/content/games/block-tower/privacy-policy.json` and `terms-of-service.json`: supplied legal documents, each containing an ISO effective date and matching `en`/`fa` titles, introductions, and ordered sections with stable IDs, paragraphs, and optional bullet lists. Edit these files to update the legal pages. Text is rendered safely, URLs and emails become links, and the effective date is localized. Keep section IDs identical across languages. Legal pages do not display sample-content notices; marketing pages remain previews.
 - `src/data/games.ts`: Block Tower's accent colors and store links. Add real HTTPS links with both Persian and English labels to the `stores` array; until then the download area displays a coming-soon message. Update the hero/download copy at the same time when announcing availability.

@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
@@ -148,6 +149,28 @@ test('root redirects without JavaScript and has visible fallback links', async (
 test('configuration is exactly an empty JSON object', async () => {
   assert.equal((await read('configs/block-tower.json')).trim(), '{}');
   assert.deepEqual(JSON.parse(await read('configs/block-tower.json')), {});
+});
+
+test('Block Tower API preserves JSON bytes and localization integrity', async () => {
+  const directory = 'api/blocktower/configs/v1/';
+  const translationPath = 'localization/fa/1.json';
+  const translation = await readFile(`dist/${directory}${translationPath}`);
+  assert.notDeepEqual([...translation.subarray(0, 3)], [0xef, 0xbb, 0xbf]);
+  assert.ok(Array.isArray(JSON.parse(translation.toString('utf8')).entries));
+  const hash = createHash('sha256').update(translation).digest('hex');
+  for (const store of ['myket', 'bazaar']) {
+    const config = JSON.parse(await read(`${directory}${store}.json`));
+    assert.equal(config.store, store);
+    assert.equal(config.localization.path, translationPath);
+    assert.equal(config.localization.sha256, hash);
+  }
+  for (const file of ['myket.json', 'bazaar.json', translationPath]) {
+    assert.deepEqual(
+      await readFile(`dist/${directory}${file}`),
+      await readFile(`public/${directory}${file}`),
+      `${file} is published byte-for-byte`,
+    );
+  }
 });
 
 test('sitemap and robots use the deployment address and bilingual routes', async () => {

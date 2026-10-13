@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "revision": "shipped-1",
+  "store": "bazaar",
+  "economy": {
+    "firstClearCoins": 10,
+    "offers": [
+      {
+        "id": "energy.single",
+        "price": 30,
+        "quantity": 1,
+        "enabled": true
+      },
+      {
+        "id": "booster.undo.single",
+        "price": 20,
+        "quantity": 1,
+        "enabled": true
+      },
+      {
+        "id": "booster.block_breaker.single",
+        "price": 30,
+        "quantity": 1,
+        "enabled": true
+      }
+    ]
+  },
+  "storeProducts": [
+    {
+      "sku": "coins_small",
+      "coins": 100,
+      "enabled": true
+    },
+    {
+      "sku": "coins_medium",
+      "coins": 300,
+      "enabled": true
+    },
+    {
+      "sku": "coins_large",
+      "coins": 1000,
+      "enabled": true
+    },
+    {
+      "sku": "no_ads",
+      "coins": 0,
+      "enabled": true
+    }
+  ],
+  "ads": {
+    "provider": "tapsell",
+    "coinAmount": 10,
+    "cooldownSeconds": 3600,
+    "continueMoves": 5,
+    "continueSeconds": 30,
+    "minimumAttempts": 2,
+    "maximumAttempts": 3,
+    "protectedThroughLevel": 10,
+    "placements": {
+      "LevelTransition": {
+        "enabled": true,
+        "zone": "6ab4d7f66da4b558f3901c20"
+      },
+      "HourlyCoinReward": {
+        "enabled": true,
+        "zone": "6ab4d7e9e237e15c69fbabf6"
+      },
+      "ContinuePlay": {
+        "enabled": true,
+        "zone": "6ab4d7e9e237e15c69fbabf6"
+      },
+      "MainMenuBanner": {
+        "enabled": true,
+        "zone": "6ab4d809f9c3d5797ba49cb9"
+      }
+    }
+  },
+  "boosters": [
+    {
+      "id": "undo",
+      "unlockLevel": 10
+    },
+    {
+      "id": "block_breaker",
+      "unlockLevel": 10
+    }
+  ],
+  "feedback": {
+    "enabled": true,
+    "milestones": [
+      30,
+      60
+    ]
+  },
+  "analytics": {
+    "enabled": true
+  },
+  "links": {
+    "terms": "https://joojikstudio.ir/fa/games/block-tower/terms-of-service/",
+    "privacy": "https://joojikstudio.ir/fa/games/block-tower/privacy-policy/"
+  },
+  "localization": {
+    "version": "1",
+    "path": "localization/fa/1.json",
+    "sha256": "33f59dde6481335b6cbf56056dc85d0bc0c9c6863662a99007974465a010a071"
+  }
+}
