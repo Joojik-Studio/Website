@@ -79,7 +79,9 @@
         {
           "id": "audience",
           "title": "Intended audience",
-          "paragraphs": ["Block Tower is intended for teens and adults."],
+          "paragraphs": [
+            "Block Tower is intended for teens and adults."
+          ],
           "bullets": []
         },
         {

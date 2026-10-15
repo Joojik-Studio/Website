@@ -1,25 +1,25 @@
 {
   "schemaVersion": 1,
-  "revision": "shipped-1",
+  "revision": "economy-2026-10-15-2",
   "store": "bazaar",
   "economy": {
     "firstClearCoins": 10,
     "offers": [
       {
         "id": "energy.single",
-        "price": 30,
+        "price": 40,
         "quantity": 1,
         "enabled": true
       },
       {
         "id": "booster.undo.single",
-        "price": 20,
+        "price": 25,
         "quantity": 1,
         "enabled": true
       },
       {
         "id": "booster.block_breaker.single",
-        "price": 30,
+        "price": 80,
         "quantity": 1,
         "enabled": true
       }
@@ -28,17 +28,17 @@
   "storeProducts": [
     {
       "sku": "coins_small",
-      "coins": 100,
-      "enabled": true
-    },
-    {
-      "sku": "coins_medium",
       "coins": 300,
       "enabled": true
     },
     {
-      "sku": "coins_large",
+      "sku": "coins_medium",
       "coins": 1000,
+      "enabled": true
+    },
+    {
+      "sku": "coins_large",
+      "coins": 2400,
       "enabled": true
     },
     {
@@ -49,7 +49,7 @@
   ],
   "ads": {
     "provider": "tapsell",
-    "coinAmount": 10,
+    "coinAmount": 25,
     "cooldownSeconds": 3600,
     "continueMoves": 5,
     "continueSeconds": 30,
@@ -103,5 +103,14 @@
     "version": "1",
     "path": "localization/fa/1.json",
     "sha256": "33f59dde6481335b6cbf56056dc85d0bc0c9c6863662a99007974465a010a071"
+  },
+  "fetch": {
+    "intervalHours": 24,
+    "retryDelayHours": [
+      1,
+      2,
+      4,
+      8
+    ]
   }
 }
