@@ -36,9 +36,9 @@ The public configuration is `/configs/block-tower.json`, initially `{}`. Do not 
 Block Tower's public app resources live in `public/api/blocktower/configs/v1/`:
 
 - `myket.json` and `bazaar.json`: store configurations.
-- `localization/fa/1.json`: versioned Persian translations.
+- `localization/fa/<version>.json`: versioned Persian translations; versions may be numbers or content hashes. Existing files remain available.
 
-Their public URLs use the same paths without `public/`, under `https://joojikstudio.ir/`. These are raw static JSON files, independent of the website language routes. Preserve their exact UTF-8 bytes; `.gitattributes` disables line-ending conversion for these resources. The build tests verify that published bytes match the source and that both configs' `localization.sha256` matches the translation. Do not format the translation or overwrite a published translation version: add a new numbered file, deploy and verify it first, then update the configs' path, version, and SHA-256 together. Keep `/v1/` available when adding API versions.
+Their public URLs use the same paths without `public/`, under `https://joojikstudio.ir/`. These are raw static JSON files, independent of the website language routes. Preserve their exact UTF-8 bytes; `.gitattributes` disables line-ending conversion for these resources. The build tests follow each config's `localization.path` automatically, verify its SHA-256, and check that published bytes match the source. No test changes are needed when updating a translation version. Do not format the translation or overwrite a published translation version: add a new versioned file, deploy and verify it first, then update the configs' path, version, and SHA-256 together. Keep `/v1/` available when adding API versions.
 
 GitHub Pages controls HTTP response headers. These JSON resources are served as `application/json; charset=utf-8`, with ETags and support for conditional requests. The observed cache policy is `Cache-Control: max-age=600`; this repository cannot set `no-cache` for configs or an immutable translation cache policy. Clients must allow for the host's cache lifetime. Exact custom cache policies require an additional hosting or proxy configuration.
 

@@ -153,18 +153,27 @@ test('configuration is exactly an empty JSON object', async () => {
 
 test('Block Tower API preserves JSON bytes and localization integrity', async () => {
   const directory = 'api/blocktower/configs/v1/';
-  const translationPath = 'localization/fa/1.json';
-  const translation = await readFile(`dist/${directory}${translationPath}`);
-  assert.notDeepEqual([...translation.subarray(0, 3)], [0xef, 0xbb, 0xbf]);
-  assert.ok(Array.isArray(JSON.parse(translation.toString('utf8')).entries));
-  const hash = createHash('sha256').update(translation).digest('hex');
+  const files = new Set(['myket.json', 'bazaar.json']);
   for (const store of ['myket', 'bazaar']) {
     const config = JSON.parse(await read(`${directory}${store}.json`));
     assert.equal(config.store, store);
-    assert.equal(config.localization.path, translationPath);
-    assert.equal(config.localization.sha256, hash);
+    const translationPath = config.localization.path;
+    assert.match(
+      translationPath,
+      /^localization\/[a-z]{2}(?:-[A-Za-z0-9]+)*\/[A-Za-z0-9_-]+\.json$/,
+      `${store}: localization must reference a local versioned JSON file`,
+    );
+    const translation = await readFile(`dist/${directory}${translationPath}`);
+    assert.notDeepEqual([...translation.subarray(0, 3)], [0xef, 0xbb, 0xbf]);
+    assert.ok(Array.isArray(JSON.parse(translation.toString('utf8')).entries));
+    assert.equal(
+      config.localization.sha256,
+      createHash('sha256').update(translation).digest('hex'),
+      `${store}: localization SHA-256 matches ${translationPath}`,
+    );
+    files.add(translationPath);
   }
-  for (const file of ['myket.json', 'bazaar.json', translationPath]) {
+  for (const file of files) {
     assert.deepEqual(
       await readFile(`dist/${directory}${file}`),
       await readFile(`public/${directory}${file}`),
