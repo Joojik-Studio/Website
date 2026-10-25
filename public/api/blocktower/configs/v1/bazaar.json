@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "economy-2026-10-15-2",
+  "revision": "shop-ads-2026-10-24",
   "store": "bazaar",
   "economy": {
     "firstClearCoins": 10,
@@ -53,8 +53,8 @@
     "cooldownSeconds": 3600,
     "continueMoves": 5,
     "continueSeconds": 30,
-    "minimumAttempts": 2,
-    "maximumAttempts": 3,
+    "minimumAttempts": 4,
+    "maximumAttempts": 6,
     "protectedThroughLevel": 10,
     "placements": {
       "LevelTransition": {
@@ -100,9 +100,9 @@
     "privacy": "https://joojikstudio.ir/fa/games/block-tower/privacy-policy/"
   },
   "localization": {
-    "version": "1",
-    "path": "localization/fa/1.json",
-    "sha256": "33f59dde6481335b6cbf56056dc85d0bc0c9c6863662a99007974465a010a071"
+    "version": "f528b86c0d77eb21",
+    "path": "localization/fa/f528b86c0d77eb21.json",
+    "sha256": "f528b86c0d77eb21f17e59baaa9afc9990001011d85e702af45732e2aa7b83f3"
   },
   "fetch": {
     "intervalHours": 24,
