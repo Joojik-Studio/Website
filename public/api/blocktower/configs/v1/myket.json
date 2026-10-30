@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "shop-ads-2026-10-24",
+  "revision": "release-1.2.0-2026-10-29-compat",
   "store": "myket",
   "economy": {
     "firstClearCoins": 10,
@@ -100,9 +100,9 @@
     "privacy": "https://joojikstudio.ir/fa/games/block-tower/privacy-policy/"
   },
   "localization": {
-    "version": "f528b86c0d77eb21",
-    "path": "localization/fa/f528b86c0d77eb21.json",
-    "sha256": "f528b86c0d77eb21f17e59baaa9afc9990001011d85e702af45732e2aa7b83f3"
+    "version": "131d1765de245553",
+    "path": "localization/fa/131d1765de245553.json",
+    "sha256": "131d1765de24555331c84d59ba9ae49f4f40b955339812fd8e08dcaf7e15998c"
   },
   "fetch": {
     "intervalHours": 24,
